@@ -1,6 +1,10 @@
+import os
+from dotenv import load_dotenv
 from sqlmodel import create_engine, SQLModel, Session
 
-DATABASE_URL = "postgresql://{usuario}:{contrasenia}@localhost:5432/probandoSQL_model"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(
     DATABASE_URL,
